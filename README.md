@@ -1,8 +1,34 @@
-# Chatbot de WhatsApp para reservas
+# WhatsApp Reservation Chatbot
 
-Chatbot de WhatsApp con panel web y API REST para gestionar reservas, usuarios e historial (PHP + MVC + Twilio).
+Chatbot de WhatsApp para gestionar reservas automaticamente con un panel web administrativo y una API REST.
 
-## Instalacion rapida
+Tecnologias:
+- PHP 8 (arquitectura MVC)
+- MySQL
+- Twilio WhatsApp API
+- Composer
+
+## Features
+
+- Chatbot de WhatsApp para reservas automaticas
+- Panel web administrativo
+- API REST para gestion de usuarios y reservas
+- Historial de reservas
+- Sistema de migraciones para base de datos
+- Configuracion mediante variables de entorno
+
+## Screenshots
+
+Login panel
+Admin dashboard
+Chatbot conversation example
+
+Imagenes:
+- docs/screenshots/login.png
+- docs/screenshots/panel.png
+- docs/screenshots/chat.png
+
+## Quick Start
 
 1. `composer install`
 2. Crea `.env` y completa valores
@@ -84,10 +110,59 @@ Importante:
 2. Configura esa URL en Twilio Sandbox (When a message comes in)
 3. Une tu numero al sandbox enviando `join <sandbox>`
 
+## Politicas y legal
+
+- [Aviso legal](docs/aviso-legal.md)
+- [Politica de privacidad](docs/privacidad.md)
+- [Politica de cookies](docs/cookies.md)
+
+## Security
+
+Sensitive configuration values (API tokens, database credentials)
+must be stored in the .env file and should never be committed to the repository.
+
+## Publicar en GitHub
+
+- No subas `.env`
+- No hardcodees credenciales
+- Evita numeros reales en ejemplos
+- Elimina logs/dumps/backups
+
+## License
+
+MIT License
+
+---
 
 # WhatsApp Reservation Chatbot
 
 WhatsApp chatbot with a web panel and REST API to manage reservations, users and history (PHP + MVC + Twilio).
+
+Technologies:
+- PHP 8 (MVC architecture)
+- MySQL
+- Twilio WhatsApp API
+- Composer
+
+## Features
+
+- WhatsApp chatbot for automatic reservations
+- Admin web panel
+- REST API for users and reservations
+- Reservation history
+- Database migration system
+- Environment-based configuration
+
+## Screenshots
+
+Login panel
+Admin dashboard
+Chatbot conversation example
+
+Images:
+- docs/screenshots/login.png
+- docs/screenshots/panel.png
+- docs/screenshots/chat.png
 
 ## Quick Start
 
@@ -171,3 +246,24 @@ Important:
 2. Configure that URL in Twilio Sandbox (When a message comes in)
 3. Join the sandbox by sending `join <sandbox>`
 
+## Policies and Legal
+
+- [Legal notice](docs/aviso-legal.md)
+- [Privacy policy](docs/privacidad.md)
+- [Cookie policy](docs/cookies.md)
+
+## Security
+
+Sensitive configuration values (API tokens, database credentials)
+must be stored in the .env file and should never be committed to the repository.
+
+## Publish to GitHub
+
+- Do not commit `.env`
+- Do not hardcode credentials
+- Avoid real phone numbers in examples
+- Remove logs/dumps/backups
+
+## License
+
+MIT License
