@@ -81,6 +81,31 @@ class DbSchema extends DbBase
         }
     }
 
+    public function ensureAdminUser(): ?string
+    {
+        // Crea un admin inicial si no existe ninguno.
+        $stmt = $this->pdo->query("SELECT COUNT(*) FROM usuarios WHERE rol = 'admin'");
+        $count = (int) $stmt->fetchColumn();
+        if ($count > 0) {
+            return null;
+        }
+
+        $username = trim((string) (getenv('ADMIN_USER') ?: 'admin'));
+        $password = (string) (getenv('ADMIN_PASS') ?: 'admin1234');
+        if ($username === '') {
+            $username = 'admin';
+        }
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $insert = $this->pdo->prepare("INSERT INTO usuarios (usuario, password, rol) VALUES (:usuario, :password, 'admin')");
+        $insert->execute([
+            ':usuario' => $username,
+            ':password' => $hash,
+        ]);
+
+        return $username;
+    }
+
     private function indexExists(string $table, string $index): bool
     {
         // Comprueba si existe indice.
@@ -106,5 +131,3 @@ class DbSchema extends DbBase
         return ((int) $stmt->fetchColumn()) > 0;
     }
 }
-
-
