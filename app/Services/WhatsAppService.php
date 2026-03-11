@@ -16,7 +16,7 @@ class WhatsAppService
         // Credenciales Twilio via .env
         $sid = getenv('TWILIO_SID') ?: '';
         $token = getenv('TWILIO_TOKEN') ?: '';
-        $this->from = getenv('TWILIO_FROM') ?: 'whatsapp:+14155238886';
+        $this->from = getenv('TWILIO_FROM') ?: 'whatsapp:number_from_twilio';
 
         if ($sid !== '' && $token !== '') {
             $this->client = new Client($sid, $token);
