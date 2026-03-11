@@ -1,9 +1,0 @@
-﻿Medio: inconsistencia de sesiÃ³n entre panel web y API
-isLogged() acepta sesiÃ³n legacy (usuario) pero getUserId() depende de user_id.
-Resultado: algunas operaciones de API para no-admin pueden fallar con â€œSesion invalidaâ€ si el login vino desde el panel tradicional.
-Referencias: api/config/session.php, api/config/session.php, api/users.php
-Bajo: rol sin validaciÃ³n estricta al crear usuarios en API
-El rol se guarda tal cual llega; no hay whitelist (admin|trabajador|empleado).
-Riesgo: datos inconsistentes y comportamientos inesperados en autorizaciones.
-Referencias: api/auth/register.php, api/db/DbUsers.php
-
