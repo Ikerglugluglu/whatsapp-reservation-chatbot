@@ -84,14 +84,6 @@ Importante:
 2. Configura esa URL en Twilio Sandbox (When a message comes in)
 3. Une tu numero al sandbox enviando `join <sandbox>`
 
-## Publicar en GitHub
-
-- No subas `.env`
-- No hardcodees credenciales
-- Evita numeros reales en ejemplos
-- Elimina logs/dumps/backups
-
----
 
 # WhatsApp Reservation Chatbot
 
@@ -179,9 +171,3 @@ Important:
 2. Configure that URL in Twilio Sandbox (When a message comes in)
 3. Join the sandbox by sending `join <sandbox>`
 
-## Publish to GitHub
-
-- Do not commit `.env`
-- Do not hardcode credentials
-- Avoid real phone numbers in examples
-- Remove logs/dumps/backups
