@@ -9,7 +9,7 @@ try {
             echo "Webhook WhatsApp activo.\n";
             echo "Usa esta URL en Twilio Sandbox (When a message comes in):\n";
             echo $webhookUrl . "\n\n";
-            echo "Nota: http://127.0.0.1:4040/inspect/http es solo el panel de inspeccion local de ngrok, no es la URL publica del webhook.";
+            echo "Nota: http://xxxxxxx/inspect/http es solo el panel de inspeccion local de ngrok, no es la URL publica del webhook.";
             exit;
         }
 
