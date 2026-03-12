@@ -1,13 +1,13 @@
 # WhatsApp Reservation Chatbot
 
-Chatbot de WhatsApp para gestionar reservas automaticamente con un panel web administrativo y una API REST.
+Chatbot de WhatsApp para gestionar reservas automáticamente mediante Twilio.
+Incluye panel administrativo web y API REST.
 
-Tecnologias:
-- PHP 8 (arquitectura MVC)
+Tech stack:
+- PHP
 - MySQL
 - Twilio WhatsApp API
-- Composer
-
+- MVC architecture
 ## Features
 
 - Chatbot de WhatsApp para reservas automaticas
