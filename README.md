@@ -1,5 +1,6 @@
 # WhatsApp Reservation Chatbot
 
+<<<<<<< Updated upstream
 Chatbot de WhatsApp para gestionar reservas automáticamente mediante Twilio.
 Incluye panel administrativo web y API REST.
 
@@ -8,6 +9,16 @@ Tech stack:
 - MySQL
 - Twilio WhatsApp API
 - MVC architecture
+=======
+Chatbot de WhatsApp para gestionar reservas automaticamente con un panel web administrativo y una API REST.
+
+Tecnologias:
+- PHP 8 (arquitectura MVC)
+- MySQL
+- Twilio WhatsApp API
+- Composer
+
+>>>>>>> Stashed changes
 ## Features
 
 - Chatbot de WhatsApp para reservas automaticas
@@ -53,12 +64,20 @@ TWILIO_FROM=tu_numero_whatsapp
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
+<<<<<<< Updated upstream
 TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=======
+TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+>>>>>>> Stashed changes
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 PUBLIC_BASE_URL=https://tu-dominio-o-ngrok
 WEBHOOK_PATH=index.php
+<<<<<<< Updated upstream
 NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
+=======
+NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+>>>>>>> Stashed changes
 ```
 
 Notas:
@@ -189,12 +208,20 @@ TWILIO_FROM=your_whatsapp_number
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
+<<<<<<< Updated upstream
 TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxx
+=======
+TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+>>>>>>> Stashed changes
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 PUBLIC_BASE_URL=https://your-domain-or-ngrok
 WEBHOOK_PATH=index.php
+<<<<<<< Updated upstream
 NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
+=======
+NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+>>>>>>> Stashed changes
 ```
 
 Notes:
@@ -246,6 +273,25 @@ Important:
 2. Configure that URL in Twilio Sandbox (When a message comes in)
 3. Join the sandbox by sending `join <sandbox>`
 
+<<<<<<< Updated upstream
+=======
+## Troubleshooting (Twilio Sandbox)
+
+If Twilio Debugger shows error `12200` with:
+`cvc-elt.1.a: Cannot find the declaration of element 'br'`
+it usually means your webhook returned **HTML** instead of TwiML. A common cause
+is a PHP fatal error that outputs an HTML error page with `<br>` tags.
+
+In this project we saw a frequent root cause:
+**BOM (UTF‑8 with BOM) in vendor PHP files**, which triggers:
+`Namespace declaration statement has to be the very first statement...`
+
+Fix:
+1. Avoid editing `vendor/` with Visual Studio.
+2. Reinstall dependencies: `composer install`
+3. If needed, remove BOM from affected files.
+
+>>>>>>> Stashed changes
 ## Policies and Legal
 
 - [Legal notice](docs/aviso-legal.md)

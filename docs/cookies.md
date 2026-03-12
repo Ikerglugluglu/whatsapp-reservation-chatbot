@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Política de Cookies
 
 Este documento es una plantilla informativa y no constituye asesoramiento legal.
@@ -33,3 +34,24 @@ Esta política puede actualizarse cuando se incorporen nuevas cookies o servicio
 Si tienes dudas sobre esta política, puedes contactar con:
 - Responsable del tratamiento: **[Nombre o Empresa]**
 - Email de contacto: **[correo@dominio.com]**
+=======
+# Politica de cookies
+
+Ultima actualizacion: 2026-03-11
+
+Este documento es una plantilla informativa y no constituye asesoramiento legal.
+
+## Que son las cookies
+
+Una cookie es un pequeno archivo que se almacena en el navegador para recordar informacion de sesion.
+
+## Cookies que usamos
+
+- Cookies de sesion: necesarias para mantener el login del panel.
+
+No usamos cookies de analitica ni publicidad.
+
+## Como desactivar cookies
+
+Puedes configurar tu navegador para bloquear o eliminar cookies. Si las desactivas, el panel puede no funcionar correctamente.
+>>>>>>> Stashed changes

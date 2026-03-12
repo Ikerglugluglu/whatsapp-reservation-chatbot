@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Este documento es una plantilla informativa y no constituye asesoramiento legal.
 
 # Aviso Legal
@@ -40,3 +41,29 @@ El tratamiento de datos personales se describe en la **Política de Privacidad**
 ## 8. Legislación aplicable y jurisdicción
 
 Este aviso legal se rige por la legislación aplicable en **[país/region]**. Cualquier disputa se someterá a los juzgados y tribunales de **[ciudad]**.
+=======
+# Aviso legal
+
+Ultima actualizacion: 2026-03-11
+
+Este documento es una plantilla informativa y no constituye asesoramiento legal.
+
+## Titular del sitio
+
+Titular: [NOMBRE O RAZON SOCIAL]
+NIF/CIF: [NIF/CIF]
+Direccion: [DIRECCION]
+Email de contacto: [EMAIL]
+
+## Objeto
+
+Este sitio se usa para la gestion administrativa de reservas mediante un panel interno y un chatbot de WhatsApp.
+
+## Responsabilidad
+
+El titular no se responsabiliza de un uso indebido del sistema por parte de usuarios con acceso no autorizado.
+
+## Propiedad intelectual
+
+El codigo y contenidos del proyecto son propiedad del titular salvo indicacion contraria.
+>>>>>>> Stashed changes

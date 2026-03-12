@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Este documento es una plantilla informativa y no constituye asesoramiento legal.
 
 # Política de Privacidad
@@ -66,3 +67,56 @@ Se aplican medidas técnicas y organizativas razonables para proteger los datos,
 ## 9. Cambios en esta política
 
 Esta política puede actualizarse. La versión vigente se publicará en este archivo.
+=======
+# Politica de privacidad
+
+Ultima actualizacion: 2026-03-11
+
+Este documento es una plantilla informativa y no constituye asesoramiento legal.
+
+## Responsable del tratamiento
+
+Responsable: [NOMBRE O RAZON SOCIAL]
+NIF/CIF: [NIF/CIF]
+Direccion: [DIRECCION]
+Email de contacto: [EMAIL]
+
+## Datos que tratamos
+
+- Nombre de cliente
+- Numero de telefono
+- Datos de reserva (fecha, hora, etc.)
+- Datos de acceso al panel (usuario, rol)
+- Datos tecnicos minimos de sesion (cookies de sesion)
+
+## Finalidad
+
+- Gestion administrativa de reservas
+- Comunicacion operativa relacionada con reservas
+- Seguridad y control de acceso al panel
+
+No publicamos ni cedemos numeros de telefono ni datos personales a terceros.
+
+## Base legal
+
+- Ejecucion de un servicio administrativo solicitado
+- Interes legitimo en la seguridad y gestion interna
+
+## Conservacion
+
+- Datos de reservas: hasta que dejen de ser necesarios para la gestion
+- Historial: segun necesidades administrativas internas
+- Puedes solicitar la eliminacion cuando proceda
+
+## Cesiones y encargados
+
+No se ceden datos a terceros salvo obligacion legal. Servicios tecnicos (hosting, email, etc.) pueden tratar datos como encargados.
+
+## Derechos
+
+Puedes ejercer derechos de acceso, rectificacion, supresion, oposicion y limitacion escribiendo a [EMAIL].
+
+## Seguridad
+
+Se aplican medidas tecnicas razonables (control de acceso, hash de contrasenas, sesiones seguras).
+>>>>>>> Stashed changes
