@@ -2,15 +2,16 @@ Options -Indexes
 # Reglas de Apache para proteger y enrutar el panel.
 
 RewriteEngine On
+RewriteBase /CHAT-BOT/
 # Block direct directory browsing and always send to login
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ panel_login.php [R=302,L]
+RewriteRule ^ panel_login.php [L]
 
 # Block internal project directories from direct web access
-RewriteRule ^(?:app|docs|scripts|storage|vendor)(?:/|$) panel_login.php [R=302,L,NC]
+RewriteRule ^(?:app|docs|scripts|storage|vendor)(?:/|$) panel_login.php [L,NC]
 
 # Block sensitive root files from direct web access
-RewriteRule ^(?:\.env|config\.php|db\.php|composer\.(?:json|lock))$ panel_login.php [R=302,L,NC]
+RewriteRule ^(?:\.env|config\.php|db\.php|composer\.(?:json|lock))$ panel_login.php [L,NC]
 
 # Allow explicit public entrypoints
 RewriteRule ^(?:index|panel_login|panel_logout|panel_register|panel_router|admin|usuarios)\.php$ - [L,NC]
@@ -19,7 +20,7 @@ RewriteRule ^(?:index|panel_login|panel_logout|panel_register|panel_router|admin
 RewriteRule ^api(?:/|$) - [L,NC]
 
 # Block any other direct PHP file outside allowed entrypoints/API
-RewriteRule \.php$ panel_login.php [R=302,L,NC]
+RewriteRule \.php$ panel_login.php [L,NC]
 
 # Keep real files working (api/*.php, assets files, etc.)
 RewriteCond %{REQUEST_FILENAME} -f
