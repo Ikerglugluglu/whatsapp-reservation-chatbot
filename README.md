@@ -67,7 +67,7 @@ ADMIN_PASS=admin1234
 <<<<<<< Updated upstream
 TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 =======
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 >>>>>>> Stashed changes
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
@@ -76,7 +76,7 @@ WEBHOOK_PATH=index.php
 <<<<<<< Updated upstream
 NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 =======
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 >>>>>>> Stashed changes
 ```
 
@@ -211,7 +211,7 @@ ADMIN_PASS=admin1234
 <<<<<<< Updated upstream
 TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxx
 =======
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 >>>>>>> Stashed changes
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
@@ -220,7 +220,7 @@ WEBHOOK_PATH=index.php
 <<<<<<< Updated upstream
 NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 =======
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 >>>>>>> Stashed changes
 ```
 
