@@ -27,7 +27,7 @@ DB_NAME=bot_padel
 Twilio (WhatsApp):
 TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_TOKEN=tu_auth_token
-TWILIO_FROM=tu_numero_whatsapp (ej: +14195238109 en sandbox)
+TWILIO_FROM=tu_numero_whatsapp (ej: +14133238333 en sandbox)
 
 Admin inicial (opcional):
 ADMIN_USER=admin
@@ -199,14 +199,14 @@ DB_NAME=bot_padel
 Twilio (WhatsApp):
 TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_TOKEN=your_auth_token
-TWILIO_FROM=your_whatsapp_number (ex: +14155238886 in sandbox)
+TWILIO_FROM=your_whatsapp_number (ex: +14133238333 in sandbox)
 
 Initial admin (optional):
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
 Optional: Twilio templates/contents
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 Webhook:
