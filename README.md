@@ -1,13 +1,13 @@
 # WhatsApp Reservation Chatbot
 
-Chatbot de WhatsApp para gestionar reservas automaticamente con un panel web administrativo y una API REST.
+Chatbot de WhatsApp para gestionar reservas automáticamente mediante Twilio.
+Incluye panel administrativo web y API REST.
 
-Tecnologias:
-- PHP 8 (arquitectura MVC)
+Tech stack:
+- PHP
 - MySQL
 - Twilio WhatsApp API
-- Composer
-
+- MVC architecture
 ## Features
 
 - Chatbot de WhatsApp para reservas automaticas
@@ -53,12 +53,12 @@ TWILIO_FROM=tu_numero_whatsapp
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 PUBLIC_BASE_URL=https://tu-dominio-o-ngrok
 WEBHOOK_PATH=index.php
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 ```
 
 Notas:
@@ -189,12 +189,12 @@ TWILIO_FROM=your_whatsapp_number
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 PUBLIC_BASE_URL=https://your-domain-or-ngrok
 WEBHOOK_PATH=index.php
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxx/api/tunnels
 ```
 
 Notes:
