@@ -53,7 +53,7 @@ TWILIO_FROM=tu_numero_whatsapp
 ADMIN_USER=admin
 ADMIN_PASS=admin1234
 
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 PUBLIC_BASE_URL=https://tu-dominio-o-ngrok
