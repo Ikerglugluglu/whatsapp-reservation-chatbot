@@ -98,6 +98,11 @@ try {
             break;
     }
 } catch (Throwable $e) {
+    if ($e instanceof RuntimeException && $e->getMessage() === 'SLOT_TAKEN') {
+        http_response_code(409);
+        echo json_encode(['error' => 'Esa franja de 1 hora ya esta reservada.']);
+        exit;
+    }
     // Error generico (detalle en log).
     error_log('API reservas error: ' . $e->getMessage());
     http_response_code(500);

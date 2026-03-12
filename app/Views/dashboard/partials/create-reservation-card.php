@@ -18,6 +18,7 @@ declare(strict_types=1);
             <div class="col-12 col-md-4">
                 <label for="create_fecha_reserva" class="form-label">Fecha reservada</label>
                 <input id="create_fecha_reserva" type="datetime-local" name="create_fecha_reserva" class="form-control" value="<?= htmlspecialchars((string) ($create_reservation_form['fecha_reserva'] ?? '')) ?>" required>
+                <div class="form-text">Duracion fija: 1 hora. Se puede reservar a cualquier minuto.</div>
             </div>
             <div class="col-12">
                 <button name="create_reserva" value="1" type="submit" class="btn btn-success">Crear reserva</button>

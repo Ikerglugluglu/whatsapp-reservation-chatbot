@@ -72,6 +72,7 @@ final class WhatsAppWebhookHandler
             . "1) horarios\n"
             . "2) reservar FECHA HORA (ej: reservar 2026-03-10 18:00)\n"
             . "   Tambien: reservar 10/03/2026 18:00 o reservar lunes 18:00\n"
+            . "   Duracion fija: 1 hora. Puedes reservar en cualquier minuto.\n"
             . "3) mis reservas\n"
             . "4) ayuda";
     }
@@ -243,7 +244,7 @@ final class WhatsAppWebhookHandler
             $this->reservas->reserveWithHistory($contactName, $from, $targetDateTime);
         } catch (RuntimeException $e) {
             if ($e->getMessage() === 'SLOT_TAKEN') {
-                $this->respond('Esa fecha/hora ya esta reservada. Elige otra.');
+                $this->respond('Esa franja de 1 hora ya esta reservada. Elige otra.');
             }
             throw $e;
         }

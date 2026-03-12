@@ -52,12 +52,7 @@ class DbReservas extends DbBase
 
         $this->pdo->beginTransaction();
         try {
-            $check = $this->pdo->prepare('SELECT id FROM reservas WHERE fecha_reserva = :fecha_reserva FOR UPDATE');
-            $check->execute([':fecha_reserva' => $fechaReserva]);
-            if ($check->fetch()) {
-                $this->pdo->rollBack();
-                throw new RuntimeException('SLOT_TAKEN');
-            }
+            $this->assertSlotAvailable($dt);
 
             $insert = $this->pdo->prepare('INSERT INTO reservas (nombre, telefono, fecha_reserva, dia, hora) VALUES (:nombre, :telefono, :fecha_reserva, :dia, :hora)');
             $insert->execute([
@@ -121,17 +116,28 @@ class DbReservas extends DbBase
         $dt = new DateTimeImmutable($fechaReserva);
         $dia = $this->dayName($dt);
         $hora = $dt->format('H:i');
+        $this->pdo->beginTransaction();
+        try {
+            $this->assertSlotAvailable($dt);
 
-        $stmt = $this->pdo->prepare('INSERT INTO reservas (nombre, telefono, fecha_reserva, dia, hora) VALUES (:nombre, :telefono, :fecha_reserva, :dia, :hora)');
-        $stmt->execute([
-            ':nombre' => $nombre,
-            ':telefono' => $telefono,
-            ':fecha_reserva' => $dt->format('Y-m-d H:i:s'),
-            ':dia' => $dia,
-            ':hora' => $hora,
-        ]);
+            $stmt = $this->pdo->prepare('INSERT INTO reservas (nombre, telefono, fecha_reserva, dia, hora) VALUES (:nombre, :telefono, :fecha_reserva, :dia, :hora)');
+            $stmt->execute([
+                ':nombre' => $nombre,
+                ':telefono' => $telefono,
+                ':fecha_reserva' => $dt->format('Y-m-d H:i:s'),
+                ':dia' => $dia,
+                ':hora' => $hora,
+            ]);
 
-        return $this->getById((int) $this->pdo->lastInsertId());
+            $id = (int) $this->pdo->lastInsertId();
+            $this->pdo->commit();
+            return $this->getById($id);
+        } catch (Throwable $e) {
+            if ($this->pdo->inTransaction()) {
+                $this->pdo->rollBack();
+            }
+            throw $e;
+        }
     }
 
     public function update(int $id, string $nombre, string $telefono, string $fechaReserva): array
@@ -140,18 +146,28 @@ class DbReservas extends DbBase
         $dt = new DateTimeImmutable($fechaReserva);
         $dia = $this->dayName($dt);
         $hora = $dt->format('H:i');
+        $this->pdo->beginTransaction();
+        try {
+            $this->assertSlotAvailable($dt, $id);
 
-        $stmt = $this->pdo->prepare('UPDATE reservas SET nombre = :nombre, telefono = :telefono, fecha_reserva = :fecha_reserva, dia = :dia, hora = :hora WHERE id = :id');
-        $stmt->execute([
-            ':id' => $id,
-            ':nombre' => $nombre,
-            ':telefono' => $telefono,
-            ':fecha_reserva' => $dt->format('Y-m-d H:i:s'),
-            ':dia' => $dia,
-            ':hora' => $hora,
-        ]);
+            $stmt = $this->pdo->prepare('UPDATE reservas SET nombre = :nombre, telefono = :telefono, fecha_reserva = :fecha_reserva, dia = :dia, hora = :hora WHERE id = :id');
+            $stmt->execute([
+                ':id' => $id,
+                ':nombre' => $nombre,
+                ':telefono' => $telefono,
+                ':fecha_reserva' => $dt->format('Y-m-d H:i:s'),
+                ':dia' => $dia,
+                ':hora' => $hora,
+            ]);
 
-        return $this->getById($id);
+            $this->pdo->commit();
+            return $this->getById($id);
+        } catch (Throwable $e) {
+            if ($this->pdo->inTransaction()) {
+                $this->pdo->rollBack();
+            }
+            throw $e;
+        }
     }
 
     public function delete(int $id): array
@@ -177,6 +193,35 @@ class DbReservas extends DbBase
         ];
 
         return $days[(int) $dt->format('N')] ?? '';
+    }
+
+    private function assertSlotAvailable(DateTimeImmutable $dt, ?int $excludeId = null): void
+    {
+        // No permite solapes: cada reserva dura 1 hora fija.
+        $start = $dt->format('Y-m-d H:i:s');
+        $end = $dt->modify('+1 hour')->format('Y-m-d H:i:s');
+
+        $sql = 'SELECT id FROM reservas
+            WHERE fecha_reserva IS NOT NULL
+            AND fecha_reserva < :end
+            AND DATE_ADD(fecha_reserva, INTERVAL 1 HOUR) > :start';
+        $params = [
+            ':start' => $start,
+            ':end' => $end,
+        ];
+
+        if ($excludeId !== null) {
+            $sql .= ' AND id != :id';
+            $params[':id'] = $excludeId;
+        }
+
+        $sql .= ' LIMIT 1 FOR UPDATE';
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        if ($stmt->fetch()) {
+            throw new RuntimeException('SLOT_TAKEN');
+        }
     }
 }
 

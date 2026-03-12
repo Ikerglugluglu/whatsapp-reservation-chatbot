@@ -72,6 +72,13 @@ final class ReservationAdminService
                     $errors[] = 'No se pudo crear la reserva.';
                 }
                 error_log('Create reservation error: ' . $e->getMessage());
+            } catch (RuntimeException $e) {
+                if ($e->getMessage() === 'SLOT_TAKEN') {
+                    $errors[] = 'Esa fecha/hora ya esta reservada.';
+                } else {
+                    $errors[] = 'No se pudo crear la reserva.';
+                    error_log('Create reservation error: ' . $e->getMessage());
+                }
             } catch (Throwable $e) {
                 $errors[] = 'No se pudo crear la reserva.';
                 error_log('Create reservation error: ' . $e->getMessage());
@@ -113,6 +120,13 @@ final class ReservationAdminService
                     $errors[] = 'No se pudo actualizar la reserva.';
                 }
                 error_log('Update reservation error: ' . $e->getMessage());
+            } catch (RuntimeException $e) {
+                if ($e->getMessage() === 'SLOT_TAKEN') {
+                    $errors[] = 'Esa fecha/hora ya esta reservada.';
+                } else {
+                    $errors[] = 'No se pudo actualizar la reserva.';
+                    error_log('Update reservation error: ' . $e->getMessage());
+                }
             } catch (Throwable $e) {
                 $errors[] = 'No se pudo actualizar la reserva.';
                 error_log('Update reservation error: ' . $e->getMessage());
