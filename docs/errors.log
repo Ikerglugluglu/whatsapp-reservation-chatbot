@@ -1,0 +1,5 @@
+2026-03-12 09:06 UTC | Twilio Sandbox | Error 12200
+Message: cvc-elt.1.a: Cannot find the declaration of element 'br'
+Cause: Webhook devolvio HTML (error fatal PHP). Se detecto BOM en archivos de vendor (Twilio SDK),
+lo que rompe "namespace" al no ser la primera instruccion.
+Fix: no editar vendor/ con Visual Studio, reinstalar dependencias con composer, o quitar BOM.
