@@ -44,10 +44,10 @@ DB_NAME=bot_padel
 Twilio (WhatsApp):
 TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_TOKEN=tu_auth_token
-TWILIO_FROM=tu_numero_whatsapp (ej: +14155238886 en sandbox)
+TWILIO_FROM=tu_numero_whatsapp (ej: +14195238109 en sandbox)
 
 Opcional: plantillas/contents de Twilio
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 Webhook:
@@ -55,7 +55,7 @@ PUBLIC_BASE_URL=https://tu-dominio-o-ngrok
 WEBHOOK_PATH=index.php
 
 Opcional (solo local con ngrok):
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxxx/api/tunnels
 
 Notas:
 - Si PUBLIC_BASE_URL no esta definido, la app intenta detectar la URL actual.
@@ -179,10 +179,10 @@ DB_NAME=bot_padel
 Twilio (WhatsApp):
 TWILIO_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_TOKEN=your_auth_token
-TWILIO_FROM=your_whatsapp_number (ex: +14155238886 in sandbox)
+TWILIO_FROM=your_whatsapp_number (ex: +14195238109 in sandbox)
 
 Optional: Twilio templates/contents
-TWILIO_CONTENT_SID=HXb5b62575e6e4ff6129ad7c8efe1f983e
+TWILIO_CONTENT_SID=xxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_CONTENT_VARS={"1":"12/1","2":"3pm"}
 
 Webhook:
@@ -190,7 +190,7 @@ PUBLIC_BASE_URL=https://your-domain-or-ngrok
 WEBHOOK_PATH=index.php
 
 Optional (local only with ngrok):
-NGROK_API_URL=http://127.0.0.1:4040/api/tunnels
+NGROK_API_URL=http://127.0.0.1:xxxx/api/tunnels
 
 Notes:
 - If PUBLIC_BASE_URL is not set, the app tries to detect the current URL.
