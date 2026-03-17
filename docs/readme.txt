@@ -11,6 +11,10 @@ Instalacion rapida
 4) Abre /panel_login.php y entra con un usuario admin
    - Si no existe ninguno, la migracion crea uno con ADMIN_USER/ADMIN_PASS
 
+Nota importante:
+- No subas .env ni datos reales a GitHub.
+- Las tablas se crean localmente ejecutando la migracion.
+
 
 Configuracion de .env
 =====================
@@ -86,6 +90,13 @@ Importante:
   - Primera puesta en marcha del proyecto.
   - Despues de cambios de estructura en base de datos.
   - Cuando quieras verificar estado de conexion/tablas.
+
+GitHub y base de datos
+======================
+Para compartir el proyecto en GitHub:
+- Sube el codigo y los scripts de migracion.
+- NO subas tablas ni datos reales.
+- Cada persona ejecuta la migracion localmente para crear su BD.
 
 
 Estructura del proyecto
@@ -183,6 +194,10 @@ Quick Install
 4) Open /panel_login.php and log in with an admin user
    - If none exists, migration creates one using ADMIN_USER/ADMIN_PASS
 
+Important note:
+- Do not commit .env or real data to GitHub.
+- Tables are created locally by running the migration.
+
 
 .env Configuration
 ==================
@@ -258,6 +273,13 @@ Important:
   - First time setup.
   - After DB schema changes.
   - When you want to verify DB connection/tables.
+
+GitHub and database
+===================
+To share the project on GitHub:
+- Commit the code and migration scripts.
+- Do NOT commit tables or real data.
+- Each developer runs the migration locally to create the DB.
 
 
 <<<<<<< Updated upstream
