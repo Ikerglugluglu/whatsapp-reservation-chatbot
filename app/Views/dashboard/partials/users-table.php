@@ -27,8 +27,8 @@ declare(strict_types=1);
                         <th>ID</th>
                         <th>Usuario</th>
                         <th>Rol</th>
-                        <th>Nueva ContraseÃƒÂ±a</th>
-                        <th>Accion</th>
+                        <th>Nueva Contrase�a</th>
+                        <th>Acci�n</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,3 +65,4 @@ declare(strict_types=1);
         </div>
     </div>
 </div>
+

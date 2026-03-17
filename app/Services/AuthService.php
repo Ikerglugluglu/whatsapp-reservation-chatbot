@@ -30,13 +30,13 @@ final class AuthService
                 $password = (string) ($_POST['password'] ?? '');
 
                 if ($username === '' || $password === '') {
-                    $error = 'Usuario y Contrasena son obligatorios';
+                    $error = 'Usuario y contraseña son obligatorios';
                 } else {
                     $user = $this->userModel->getAuthByUsername($username);
                     if (!$user) {
                         $error = 'Usuario no encontrado';
                     } elseif (!password_verify($password, (string) ($user['password'] ?? ''))) {
-                        $error = 'Contrasena incorrecta';
+                        $error = 'Contraseña incorrecta';
                     } else {
                         // OK: inicia sesion.
                         Auth::login($user);

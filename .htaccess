@@ -2,7 +2,7 @@ Options -Indexes
 # Reglas de Apache para proteger y enrutar el panel.
 
 RewriteEngine On
-RewriteBase /CHAT-BOT/
+RewriteBase /whatsapp-reservation-chatbot/
 # Block direct directory browsing and always send to login
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ panel_login.php [L]
