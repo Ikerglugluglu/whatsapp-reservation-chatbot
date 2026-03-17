@@ -111,6 +111,8 @@ Que hace:
 
 Importante:
 - Si no existe ningun admin, la migracion crea uno (`ADMIN_USER`/`ADMIN_PASS`).
+- Si no defines `ADMIN_USER`/`ADMIN_PASS`, se usan los valores por defecto
+  `admin` / `admin1234` (la password se guarda hasheada).
 - No necesitas ejecutar esto cada vez que inicias sesion.
 
 ## Estructura del proyecto
@@ -257,6 +259,8 @@ What it does:
 
 Important:
 - If no admin exists, migration creates one (`ADMIN_USER`/`ADMIN_PASS`).
+- If `ADMIN_USER`/`ADMIN_PASS` are not set, defaults are used:
+  `admin` / `admin1234` (password is stored hashed).
 - You do NOT need to run this every time you log in.
 
 ## Project Structure
