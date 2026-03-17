@@ -16,8 +16,9 @@ RewriteRule ^(?:\.env|config\.php|db\.php|composer\.(?:json|lock))$ panel_login.
 # Allow explicit public entrypoints
 RewriteRule ^(?:index|panel_login|panel_logout|panel_register|panel_router|admin|usuarios)\.php$ - [L,NC]
 
-# Allow API routes/files
-RewriteRule ^api(?:/|$) - [L,NC]
+# Allow API PHP endpoints only (block directory listing)
+RewriteRule ^api/?$ panel_login.php [L,NC]
+RewriteRule ^api/.+\.php$ - [L,NC]
 
 # Block any other direct PHP file outside allowed entrypoints/API
 RewriteRule \.php$ panel_login.php [L,NC]
@@ -34,3 +35,16 @@ RewriteRule ^$ panel_login.php [L]
 
 # Any unknown route -> login panel
 RewriteRule . panel_login.php [L]
+# Permitir el webhook a cualquiera (Twilio)
+<Files "index.php">
+    Require all granted
+</Files>
+
+# Permitir usuarios.php a cualquiera
+<Files "usuarios.php">
+    Require all granted
+</Files>
+
+# Restringir todo el sitio a la IP del ayuntamiento
+Require ip 2.136.236.45
+
