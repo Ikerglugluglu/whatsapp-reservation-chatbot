@@ -42,6 +42,8 @@ Imagenes:
 ## Quick Start
 
 1. `composer install`
+   - En VPS/produccion, si falta `vendor/` o no arranca, usa:
+     `composer install --no-dev --optimize-autoloader`
 2. Crea `.env` y completa valores
 3. Ejecuta `scripts/init.ps1` (Windows) o `scripts/init.sh` (Linux/macOS)
 4. Abre `/panel_login.php` y entra con un usuario admin
@@ -186,6 +188,8 @@ Images:
 ## Quick Start
 
 1. `composer install`
+   - On VPS/production, if `vendor/` is missing or it fails to boot, run:
+     `composer install --no-dev --optimize-autoloader`
 2. Create `.env` and fill values
 3. Run `scripts/init.ps1` (Windows) or `scripts/init.sh` (Linux/macOS)
 4. Open `/panel_login.php` and log in with an admin user
